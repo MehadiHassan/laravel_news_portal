@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-    <title>{{config('app.name', 'BangladeshTimes')}}</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-    </head>
-    <body>
-        <div class="container">
-            <h1>Services</h1>
-        </div>
-    </body>
-</html>
+@section('content')
+    <div class="service-container">
+        <h1>{{$title}}</h1>
+        @if(count($services) > 0)
+            <ul class="list-group">
+                @foreach($services as $service)
+                    <li class="list-group-item">{{$service}}</li>
+                @endforeach
+            </ul>
+        @endif
+    </div>
+@endsection

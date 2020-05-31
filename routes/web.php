@@ -20,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PagesController@index');
 Route::get('/home', 'PagesController@home');
 Route::get('/services', 'PagesController@services');
+
+Route::resource('news', 'NewsController');

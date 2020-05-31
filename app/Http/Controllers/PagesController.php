@@ -8,7 +8,8 @@ class PagesController extends Controller
 {
     //
     public function index(){
-        return view('pages.index');
+        $title = 'Find the truth';
+        return view('pages.index')->with('title', $title);
     }
 
     public function home() {
@@ -16,6 +17,10 @@ class PagesController extends Controller
     }
 
     public function services() {
-        return view('pages.services');
+        $data = array(
+            'title' => 'Welcome Services',
+            'services' => ['Web Design', 'Programming', 'SEO']
+        );
+        return view('pages.services')->with($data);
     }
 }
