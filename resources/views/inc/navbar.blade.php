@@ -16,11 +16,12 @@
           <a class="nav-link" href="/services">Sport</a>
         </li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="/news/create">Create News</a></li>
+      </ul>
       <form class="form-inline my-2 my-lg-0">
         <a class="btn btn-outline-primary btn-lg" href="/login" role="button">Login</a>
         <a class="btn btn-outline-success btn-lg" href="/register" role="button">Register</a>
-        <input class="form-control mr-sm-2" type="search" placeholder="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
   </nav>

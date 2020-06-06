@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\News;
+use DB;
 
 class NewsController extends Controller
 {
@@ -16,7 +17,7 @@ class NewsController extends Controller
     {
         //
         // $news = News::orderBy('title','desc')->get();
-        $news = News::orderBy('title','desc')->paginate(1);
+        $news = News::orderBy('created_at','desc')->paginate(10);
         return view('news.index')->with('news', $news);
     }
 
@@ -28,6 +29,7 @@ class NewsController extends Controller
     public function create()
     {
         //
+        return view('news.create');
     }
 
     /**
@@ -39,6 +41,17 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+        //Create News
+        $news = new News;
+        $news->title = $request->input('title');
+        $news->description = $request->input('description');
+        $news->category = 'category1';
+        $news->save();
+        return redirect('/news')->with('success', 'News Created');
     }
 
     /**

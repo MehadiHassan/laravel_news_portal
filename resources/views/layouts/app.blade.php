@@ -14,10 +14,13 @@
     <body>
         @include('inc.navbar')
         <div class="container">
+            @include('inc.messages')
             @yield('content')
         </div>
         <script src="{{ asset('vendor/jquery_v3.3.1/jquery.min.js') }}"></script>
         <script src="{{ asset('vendor/bootstrap_v4.3.1/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('ckeditor/ckeditor.js')}}"></script>
+        <script>CKEDITOR.replace('news-ckeditor');</script>
     </body>
 </html>
